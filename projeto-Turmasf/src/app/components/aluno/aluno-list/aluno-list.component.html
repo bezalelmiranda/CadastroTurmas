@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Ano</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let aluno of listarAlunos$ | async">
+      <td> {{aluno.id}} </td>
+      <td> {{aluno.pessoa?.nome}} </td>
+      <td> {{aluno.ano}} </td>
+      <td>
+        <div class="container-fluid">
+          <div class="col">
+            <button class="btn btn-sma btn-info">Ver</button>
+            <a routerLink="/aluno-edit/{{aluno.id}}" class="btn btn-sma btn-warning">Edit</a>
+            <button (click)="delete(aluno.id)" class="btn btn-sma btn-danger">Delete</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

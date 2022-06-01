@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Turma</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let professor of listarProf$ | async">
+      <td> {{professor.id}} </td>
+      <td> {{professor.pessoa?.nome}} </td>
+      <td> {{professor.turma}} </td>
+      <td>
+        <div class="container-fluid">
+          <div class="col">
+            <button class="btn btn-sma btn-info">Ver</button>
+            <a routerLink="/aluno-edit/{{professor.id}}" class="btn btn-sma btn-warning">Edit</a>
+            <button (click)="delete(professor.id)" class="btn btn-sma btn-danger">Delete</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

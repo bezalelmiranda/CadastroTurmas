@@ -1,0 +1,52 @@
+<div *ngIf="okInsert" class="container">
+  <div class="row">
+    <div class="alert alert-success" role="alert">
+      Professor <b>{{formProf.id}} - {{formProf.pessoa.nome}}</b> inserido com sucesso!
+    </div>
+  </div>
+</div>
+    <!-- <div *ngIf="formProf.pessoa.nome" class="row mb-2 my-4">Cadastro de<b>{{formProf.pessoa.nome}}</b>
+      <hr>
+    </div> -->
+    <div class="container">
+
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input name="nome" [(ngModel)]="formProf.pessoa.nome" class="form-control col-md-6" type="text" placeholder="Nome">
+      </div>
+
+      <div class="form-group">
+        <label for="">Idade</label>
+        <input name="idade" [(ngModel)]="formProf.pessoa.idade" class="form-control col-md-4" type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="">Endereco</label>
+        <input name="endereco" [(ngModel)]="formProf.pessoa.endereco" class="form-control" type="text" placeholder="Rua Exemplo, 500">
+      </div>
+
+      <div class="form-group">
+        <label for="">Sexo</label>
+        <select name="sexo" id="sexo" class="form-control" [(ngModel)]="formProf.pessoa.sexo">
+          <option value="">Selecione...</option>
+          <option value="M">Masculino</option>
+          <option value="F">Feminino</option>
+          <option value="O">Outro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="">Turma</label>
+        <select name="turma" id="turma" class="form-control" [(ngModel)]="formProf.turma">
+          <option value="0">Selecione...</option>
+          <option value="1">1º ano</option>
+          <option value="2">2º ano</option>
+          <option value="3">3º ano</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-success" (click)="addProf();">Salvar</button>
+      </div>
+
+    </div>
